@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Medicamentos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light p-4">
+
+  <div class="container">
+    <h2 class="mb-4">Controle de Medicamentos - Enfermaria</h2>
+
+    <!-- Botões principais -->
+    <div class="mb-4">
+      <button class="btn btn-success me-2">Dar Entrada</button>
+      <button class="btn btn-danger me-2">Dar Saída</button>
+      <button class="btn btn-primary">Emitir Relatório Diário</button>
+    </div>
+
+    <!-- Log de eventos -->
+    <div class="mb-4">
+      <h5>Últimos registros de medicações</h5>
+      <ul class="list-group">
+        <li class="list-group-item">[Exemplo] Paracetamol - 2 comprimidos - 07/05/2025 10:15</li>
+        <li class="list-group-item">[Exemplo] Dipirona - 1 ampola - 07/05/2025 09:50</li>
+      </ul>
+    </div>
+
+    <!-- Tabela principal -->
+    {% comment %} <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Entrada</th>
+            <th>Saída com paciente</th>
+            <th>Remessa de controle</th>
+            <th>Quantidade</th>
+            <th>Data da E/S</th>
+            <th>Autorização unidade</th>
+            <th>Quantidade usada</th>
+            <th>Data</th>
+            <th>Horário (estimado)</th>
+            <th>Pessoa (responsável)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Paracetamol</td>
+            <td>2 comprimidos</td>
+            <td>Lote 1234</td>
+            <td>20</td>
+            <td>07/05/2025</td>
+            <td>Assinatura Enfermeira</td>
+            <td>2</td>
+            <td>07/05/2025</td>
+            <td>10:00</td>
+            <td>João Silva</td>
+          </tr>
+          <!-- Novas linhas seriam adicionadas dinamicamente -->
+        </tbody>
+      </table>
+    </div> {% endcomment %}
+  </div>
+
+</body>
+</html>

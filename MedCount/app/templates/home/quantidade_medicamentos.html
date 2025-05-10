@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Página principal {% endblock title %}
+
+{% block stylesheet %}{% endblock stylesheet %}
+
+{% block content %}
+    <div class="main">
+        {% comment %} <p>Bem-vindo! Selecione uma opção no menu lateral.</p> {% endcomment %}
+        <div class="mb-4">
+            <h5>Quantidade total de medicamentos</h5>
+            <ul class="list-group">
+                {% for medicine in medicines %}
+                    <li class="list-group-item">{{ medicine.name }} - {{ medicine.quantity }}</li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

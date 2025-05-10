@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Controle de Medicamentos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            padding-top: 1rem;
+            color: white;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 15px;
+            font-size: 1.5rem;
+        }
+        .main {
+            padding: 20px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+
+<body>
+    {% include "includes/sidenav.html" %}
+
+    
+    <div class="content">
+        
+        {% include "includes/navigation.html" %}
+
+        {% block content %}{% endblock content %}
+
+</body>
+</html>

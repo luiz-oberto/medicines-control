@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Página principal {% endblock title %}
+
+{% block stylesheet %}{% endblock stylesheet %}
+
+{% block content %}
+    <div class="main">
+        <p>Bem-vindo! Selecione uma opção no menu lateral.</p>
+        <div class="mb-4">
+            <h5>Últimos registros de medicações</h5>
+            <ul class="list-group">
+                {% for evento in eventos %}
+                    <li class="list-group-item">{{ evento.medicine }} - {{ evento.event_type }} - {{ evento.quantity }} - {{ evento.timestamp }}</li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
