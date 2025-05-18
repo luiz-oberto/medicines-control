@@ -5,17 +5,34 @@
 {% block stylesheet %}{% endblock stylesheet %}
 
 {% block content %}
-    <div class="main">
-        <p>Bem-vindo! Selecione uma opção no menu lateral.</p>
-        <div class="mb-4">
-            <h5>Últimos registros de medicações</h5>
-            <ul class="list-group">
-                {% for evento in eventos %}
-                    <li class="list-group-item">{{ evento.medicine }} - {{ evento.event_type }} - {{ evento.quantity }} - {{ evento.timestamp }}</li>
-                {% endfor %}
-            </ul>
-            </div>
+<div class="main">
+    <!-- <p>Bem-vindo! Selecione uma opção no menu lateral.</p> -->
+    <div class="mb-4">
+        <h5>Últimos registros de medicações</h5>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Medicamento</th>
+                        <th>Entrada/Saída</th>
+                        <th>Quantidade</th>
+                        <th>Data e Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for evento in eventos %}
+                        <tr>
+                            <td>{{ evento.medicine }}</td>
+                            <td>{{ evento.event_type }}</td>
+                            <td>{{ evento.quantity }}</td>
+                            <td>{{ evento.timestamp }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
+
 
 {% endblock content %}

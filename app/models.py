@@ -24,4 +24,4 @@ class EventsLog(models.Model):
     # responsible = models.CharField(max_length=100)  # Ou um ForeignKey para User se tiver login
 
     def __str__(self):
-        return f"{self.get_event_type_display()} de {self.quantity} {self.medicine.name} em {self.timestamp.strftime('%d/%m/%Y %H:%M')}"
+        return f"{self.get_event_type_display()} de {self.quantity} {self.medicine.name} em {self.timestamp.strftime('%d/%m/%Y %H:%M')}" # type: ignore
