@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+# LEMBRETE!!! Crie um local_settings.py para deixar as configurações prontas pra subir no servidor.
 import os
 from pathlib import Path
 from decouple import config
