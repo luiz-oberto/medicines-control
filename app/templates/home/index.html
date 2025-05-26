@@ -6,6 +6,19 @@
 
 {% block content %}
 <div class="main">
+    <form action="GET" action="{% url 'busca' %}" class="mb-3">
+        <input type="text" name="q" placeholder="Buscar...">
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <ul>
+        {% for result in results %}
+            <li>{{ result.medicine }}</li>
+        {% empty %}
+            <li>Nenhum resultado encontrado</li>
+        {% endfor %}
+    </ul>
+
     <!-- <p>Bem-vindo! Selecione uma opção no menu lateral.</p> -->
     <div class="mb-4">
         <h5>Últimos registros de medicações</h5>

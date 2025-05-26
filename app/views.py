@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import EventsLog, Medicine
@@ -61,3 +62,21 @@ def visualizar_medicamentos(request):
         'medicines': medicines
     }
     return render(request, 'home/quantidade_medicamentos.html', context)
+
+
+def buscar(request):
+    query = request.GET.get('q', '').strip()
+
+    if query == '':
+        return redirect('home')
+    
+    if query:  
+        results = EventsLog.objects.filter(
+            Q(medicine__icontains = query) |
+            Q(event_type__icontains = query) 
+            # Q()
+            )
+    else:
+        results = []
+    
+    return render(request, 'home/index.html', {'results': results})
